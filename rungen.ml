@@ -11,7 +11,7 @@ type benchmark = {executable: string; name: string; runs: run list}
 
 let space_regexp = Str.regexp "[ ]+"
 
-let period_regexp = Str.regexp "."
+let period_regexp = Str.regexp "\\."
 
 let output_regexp = Str.regexp "%{output}"
 
