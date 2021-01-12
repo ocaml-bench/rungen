@@ -11,7 +11,7 @@ type benchmark = {executable: string; name: string; runs: run list}
 
 let space_regexp = Str.regexp "[ ]+"
 
-let period_regexp = Str.regexp "\."
+let period_regexp = Str.regexp "\\."
 
 let output_regexp = Str.regexp "%{output}"
 
@@ -24,7 +24,7 @@ let paramwrapper_regexp = Str.regexp "%{paramwrapper}"
 let replace_spaces_with_underscores str = Str.global_replace space_regexp "_" str
 let replace_periods_with_underscores str = Str.global_replace period_regexp "_" str
 
-let parse_json build_dir =
+let parse_json =
   let open Yojson.Basic.Util in
   let to_run json =
     { params= json |> member "params" |> to_string
@@ -117,4 +117,4 @@ let parse_json build_dir =
 
 let () =
   print_endline
-    (String.concat "\n\n" (List.map Sexp.to_string_hum (parse_json build_dir)))
+    (String.concat "\n\n" (List.map Sexp.to_string_hum (parse_json)))
