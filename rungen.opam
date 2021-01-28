@@ -5,7 +5,13 @@ synopsis: "Generates dune files to run benchmarks from centralised config"
 maintainer: "Sadiq Jaffer <sadiq@toao.com>"
 authors: "Sadiq Jaffer <sadiq@toao.com>"
 license: "MIT"
+homepage: "https://github.com/ocaml-bench/rungen"
+bug-reports: "https://github.com/ocaml-bench/rungen/issues"
 depends: [ "ocaml" "yojson" "sexplib0" ]
 build: [
   ["dune" "build" "-p" name]
 ]
+description: """
+The rungen utility generates dune files to execute
+[Sandmark](https://github.com/ocaml-bench/sandmark) benchmarks.
+"""
